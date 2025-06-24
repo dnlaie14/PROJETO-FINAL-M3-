@@ -23,9 +23,25 @@
       <input type="text" id="owner" placeholder="Nome do Dono" required />
       <input type="date" id="date" required />
       <input type="url" id="image" placeholder="URL da Imagem" required />
+      <select id="type" required>
+        <option value="">Tipo de Animal</option>
+        <option value="dog">Cachorro</option>
+        <option value="cat">Gato</option>
+        <option value="outro">Outro</option>
+      </select>
+      <textarea id="description" placeholder="Descrição (opcional)"></textarea>
+      <input type="text" id="cep" placeholder="CEP" />
+      <button type="button" id="buscarCEP">Buscar CEP</button>
+      <span id="erro" class="erro"></span>
+      <div id="resultado" class="resultado"></div>
+      <button type="submit">Salvar Pet</button>
+      <button type="button" id="cancelEdit" style="display:none;">Cancelar Edição</button>
+    </form>
 
-
-      <script src="script.js"></script>
+    <section class="pet-list" id="petList"></section>
+  </div>
+  
+    <script src="script.js"></script>
 </body>
 
 </html>
