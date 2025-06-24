@@ -33,3 +33,17 @@ if (url === "index.html" || url === "") {
   const pets = getPets();
   let editId = null;
 }
+
+const form = document.getElementById("petForm");
+  const nameInput = document.getElementById("name");
+  const ownerInput = document.getElementById("owner");
+  const dateInput = document.getElementById("date");
+  const descInput = document.getElementById("description");
+  const imgInput = document.getElementById("image");
+  const typeInput = document.getElementById("type");
+  const petList = document.getElementById("petList");
+  const cancelEditBtn = document.getElementById("cancelEdit");
+  const cepInput = document.getElementById("cep");
+  const buscarBtn = document.getElementById("buscarCEP");
+  const resultadoDiv = document.getElementById("resultado");
+  const erroSpan = document.getElementById("erro");
