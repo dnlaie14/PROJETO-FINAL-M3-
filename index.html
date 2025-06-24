@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>projeto M3</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>projeto M3</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-   <header>
+  <header>
     <h1>Pet Cadastro</h1>
     <nav>
       <a href="apresentacao.html">Ver Pets</a>
     </nav>
   </header>
 
-  
-    <script src="script.js"></script>
+  <div class="container">
+    <form id="petForm">
+      <input type="text" id="name" placeholder="Nome do Pet" required />
+      <input type="text" id="owner" placeholder="Nome do Dono" required />
+      <input type="date" id="date" required />
+      <input type="url" id="image" placeholder="URL da Imagem" required />
+
+
+      <script src="script.js"></script>
 </body>
+
 </html>
