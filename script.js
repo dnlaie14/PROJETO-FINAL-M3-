@@ -188,3 +188,4 @@ if (url === "index.html" || url === "") {
     `).join("")
     : "<p>Nenhum pet cadastrado.</p>";
 }
+
