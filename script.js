@@ -86,14 +86,18 @@ if (url === "index.html" || url === "") {
     const image = imgInput.value.trim();
     const type = typeInput.value;
 
-    if (editId) {
+    console.log("No submit. editId é:", editId);
+
+    if (editId !== null) {
       const index = pets.findIndex(p => p.id === editId);
       if (index !== -1) {
         pets[index] = new Pet(editId, name, owner, date, description, image, type);
+        console.log("Pet editado:", pets[index]);
       }
     } else {
       const id = Date.now();
       pets.push(new Pet(id, name, owner, date, description, image, type));
+      console.log("Novo pet adicionado:", pets[pets.length - 1]);
     }
 
     savePets(pets);
@@ -105,6 +109,8 @@ if (url === "index.html" || url === "") {
 
   petList.addEventListener("click", (e) => {
     const id = Number(e.target.getAttribute("data-id"));
+    console.log("Clique detectado:", e.target, "ID:", id);
+
     if (e.target.classList.contains("edit-btn")) {
       const pet = pets.find(p => p.id === id);
       if (pet) {
@@ -114,8 +120,11 @@ if (url === "index.html" || url === "") {
         descInput.value = pet.description;
         imgInput.value = pet.image;
         typeInput.value = pet.type;
-        editId = pet.id;
+        editId = Number(pet.id);
         cancelEditBtn.style.display = "inline-block";
+
+        console.log("Editando pet:", pet);
+        console.log("EditId definido como:", editId);
       }
     } else if (e.target.classList.contains("delete-btn")) {
       if (confirm("Deseja realmente deletar este pet?")) {
@@ -125,6 +134,7 @@ if (url === "index.html" || url === "") {
           savePets(pets);
           renderPets();
           if (editId === id) resetForm();
+          console.log("Pet deletado com ID:", id);
         }
       }
     }
@@ -173,7 +183,7 @@ if (url === "index.html" || url === "") {
 
   renderPets();
 } else if (url === "apresentacao.html") {
-  const pets = getPets();
+  const pets = getPets().map(p => new Pet(p.id, p.name, p.owner, p.date, p.description, p.image, p.type));
   const displayList = document.getElementById("displayList");
 
   displayList.innerHTML = pets.length
@@ -188,4 +198,3 @@ if (url === "index.html" || url === "") {
     `).join("")
     : "<p>Nenhum pet cadastrado.</p>";
 }
-

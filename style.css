@@ -96,5 +96,96 @@ form button:hover {
   background: #005a99;
 }
 
+/* Lista de pets */
 .pet-list {
   margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 1.5rem;
+}
+
+.pet-card {
+  background: #e1f0ff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-5px);
+}
+
+.pet-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #007acc;
+  margin-bottom: 1rem;
+}
+
+.pet-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pet-icon {
+  font-size: 1.5rem;
+}
+
+.pet-card p {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.pet-card .buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.pet-card button {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.pet-card button:hover {
+  background: #005a99;
+}
+
+/* Botão cancelar edição */
+#cancelEdit {
+  background: #cc3300;
+  margin-top: 0;
+}
+
+#cancelEdit:hover {
+  background: #992600;
+}
+
+/* Resultado de CEP */
+.erro {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.resultado p {
+  margin: 0.4rem 0;
+}
